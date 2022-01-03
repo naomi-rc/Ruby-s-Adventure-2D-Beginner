@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     
 
     Rigidbody2D _rigidBody;
+    Animator _animator;
     float _directionSwitchTimer;
     int _damage = -2;
     
@@ -18,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _directionSwitchTimer = timeTillDirectionSwitch;
     }
 
@@ -39,6 +41,9 @@ public class EnemyController : MonoBehaviour
         position.x += horizontal * speed * Time.deltaTime;
         position.y += vertical * speed * Time.deltaTime;
         _rigidBody.MovePosition(position);
+
+        _animator.SetFloat("Move X", horizontal);
+        _animator.SetFloat("Move Y", vertical);
     }
 
     private void OnCollisionEnter2D(Collision2D collider)
