@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4154681005289207320}
   - component: {fileID: 6601697297756586154}
   - component: {fileID: 5986414917699366154}
+  - component: {fileID: 2603186166259956888}
   m_Layer: 0
   m_Name: MegaBotHorizontal
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d535a423915e5be4bb2ae87cc8a6eec6, type: 3}
+  m_Sprite: {fileID: 21300026, guid: 651c4abeb0812e74685da0e5a31c8dff, type: 3}
   m_Color: {r: 0.6313726, g: 0.6117647, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,18 +120,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023703575, y: -0.7836176}
+  m_Offset: {x: -0.023703575, y: 0.4978774}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.56, y: 2.56}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.560498, y: 2.5579998}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.92445946, y: 0.9927647}
+  m_Size: {x: 0.92445946, y: 0.9514255}
   m_EdgeRadius: 0
 --- !u!114 &5986414917699366154
 MonoBehaviour:
@@ -148,3 +149,22 @@ MonoBehaviour:
   horizontal: 1
   vertical: 0
   timeTillDirectionSwitch: 3
+--- !u!95 &2603186166259956888
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175708624280466416}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 877fcb34d800edc44a79667176ef4198, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

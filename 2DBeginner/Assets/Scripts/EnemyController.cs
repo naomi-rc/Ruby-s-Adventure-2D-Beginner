@@ -7,13 +7,14 @@ public class EnemyController : MonoBehaviour
     public float speed = 2.0f;
     public int horizontal = 1;
     public int vertical = 0;
-    public float timeTillDirectionSwitch = 4.0f;
-    
+    public float timeTillDirectionSwitch = 4.0f;    
 
     Rigidbody2D _rigidBody;
     Animator _animator;
     float _directionSwitchTimer;
     int _damage = -2;
+    bool broken = true;
+
     
 
     private void Start()
@@ -25,6 +26,9 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        if (!broken)
+            return;
+
         _directionSwitchTimer -= Time.deltaTime;
 
         if(_directionSwitchTimer < 0)
@@ -37,6 +41,9 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!broken)
+            return;
+
         Vector2 position = _rigidBody.position;
         position.x += horizontal * speed * Time.deltaTime;
         position.y += vertical * speed * Time.deltaTime;
@@ -54,5 +61,13 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(_damage);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        _rigidBody.simulated = false;
+        _animator.SetTrigger("Fixed");
+        Debug.Log("Fixed robot with Cog");
     }
 }
