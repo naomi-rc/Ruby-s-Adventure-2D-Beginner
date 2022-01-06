@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
     public float speed = 2.0f;
     public int horizontal = 1;
     public int vertical = 0;
-    public float timeTillDirectionSwitch = 4.0f;    
+    public float timeTillDirectionSwitch = 4.0f;
+    public ParticleSystem smokeEffect;
 
     Rigidbody2D _rigidBody;
     Animator _animator;
@@ -68,6 +69,7 @@ public class EnemyController : MonoBehaviour
         broken = false;
         _rigidBody.simulated = false;
         _animator.SetTrigger("Fixed");
+        smokeEffect.Stop();
         Debug.Log("Fixed robot with Cog");
     }
 }

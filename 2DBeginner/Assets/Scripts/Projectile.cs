@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public ParticleSystem hitEffect;
+
     Rigidbody2D _rigidbody;
 
     void Awake()
@@ -26,6 +28,10 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (hitEffect != null)
+            Instantiate(hitEffect, _rigidbody.position, Quaternion.identity);
+            //hitEffect.Play();
+
         EnemyController enemyController = collision.gameObject.GetComponent<EnemyController>();
 
         if(enemyController != null)

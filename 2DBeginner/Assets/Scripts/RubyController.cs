@@ -8,6 +8,7 @@ public class RubyController : MonoBehaviour
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
     public GameObject projectilePrefab;
+    public ParticleSystem dazedEffect;
     
     public int health { get { return currentHealth; } }
     int currentHealth;
@@ -72,6 +73,7 @@ public class RubyController : MonoBehaviour
         if(amount < 0)
         {
             _animator.SetTrigger("Hit");
+            dazedEffect.Play();
 
             if (isInvincible)
                 return;
